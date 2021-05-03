@@ -16,17 +16,14 @@ app.get(
 
 app.get("/movies/:title", (request, response) => {
   const movieTitle = movies.find((movie) => movie.title)
-  
+
   if (movieTitle.includes(request.params.title))
-  return response.send(movieTitle)
-
-}
-
-  console.log(request, response)}
+    return response.send(movieTitle)
+})
 
 app.get("/movies/:directors", (request, response) => {
   const movieDirector = movies.find((movie) =>
-    movie.directors.includes(movie.directors)
+    movie.directors.includes(movie.directors[0])
   )
 
   // console.log(movies)
